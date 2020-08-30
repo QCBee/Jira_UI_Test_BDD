@@ -80,15 +80,12 @@ public class LoginPageSteps {
     public void enterUserNameForUnsuccessfulFlow(String userName, String userPass){
         new LoginPage().enterUserName(userName);
         new LoginPage().enterPassword(userPass);
-
     }
 
     @And ("^I enter password - ([^\"]*)$")
     public void enterUserPassForUnsuccessfulFlow(String userPass){
         new LoginPage().enterPassword(userPass);
-
     }
-
 }
 
 
