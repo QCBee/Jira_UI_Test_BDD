@@ -6,7 +6,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import pages.HomePage;
 import pages.LoginPage;
 import utils.WebDriverFactory;
 import java.io.File;
@@ -76,11 +75,4 @@ public class LoginPageSteps {
         new LoginPage().enterUserName(userName);
         new LoginPage().enterPassword(userPass);
     }
-
-    @And ("^I enter password - ([^\"]*)$")
-    public void enterUserPassForUnsuccessfulFlow(String userPass){
-        new LoginPage().enterPassword(userPass);
-    }
 }
-
-
