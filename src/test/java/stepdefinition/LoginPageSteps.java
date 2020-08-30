@@ -1,13 +1,11 @@
 package stepdefinition;
 
 import com.google.common.io.Files;
-import io.cucumber.java.Scenario;
+import io.cucumber.java.*;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import pages.HomePage;
 import pages.LoginPage;
 import utils.WebDriverFactory;
@@ -18,6 +16,7 @@ public class LoginPageSteps {
 
     @Before
     public void beforeCucumberScenario(Scenario scenario) {
+        System.out.println("Starting execution: " + scenario.getName());
         WebDriverFactory.createInstance("Chrome");
     }
 
@@ -30,7 +29,7 @@ public class LoginPageSteps {
                 e.printStackTrace();
             }
         }
-        WebDriverFactory.getDriver().close();
+        WebDriverFactory.getDriver().quit();
     }
 
     public void takeScreenshot() throws IOException {
@@ -62,12 +61,12 @@ public class LoginPageSteps {
         new LoginPage().clickLogin();
     }
 
-    @When("^I am on the Home Page$")
+    @Then("^I am on the Home Page$")
     public void atTheHomePage() {
         assert new HomePage().onPage();
     }
 
-    @When("^I debug$")
+    @And("^I debug$")
     public void debug() {
         int a = 0;
     }
@@ -76,6 +75,20 @@ public class LoginPageSteps {
     public void atLoginPage(){
         assert new LoginPage().onPage();
     }
+
+    @And ("I enter ([^\"]*) and ([^\"]*)$")
+    public void enterUserNameForUnsuccessfulFlow(String userName, String userPass){
+        new LoginPage().enterUserName(userName);
+        new LoginPage().enterPassword(userPass);
+
+    }
+
+    @And ("^I enter password - ([^\"]*)$")
+    public void enterUserPassForUnsuccessfulFlow(String userPass){
+        new LoginPage().enterPassword(userPass);
+
+    }
+
 }
 
 
