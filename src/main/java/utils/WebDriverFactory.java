@@ -36,10 +36,15 @@ public class WebDriverFactory {
         } else {
             driver = new ChromeDriver();
         }
-
         driver.manage()
                 .window()
                 .maximize();
         webDriver.set(driver);
     }
+
+    public static void closeBrowser(){
+        WebDriverFactory.getDriver().quit();
+    }
+
+
 }

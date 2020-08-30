@@ -29,7 +29,7 @@ public class LoginPageSteps {
                 e.printStackTrace();
             }
         }
-        WebDriverFactory.getDriver().quit();
+        WebDriverFactory.closeBrowser();
     }
 
     public void takeScreenshot() throws IOException {
@@ -59,11 +59,6 @@ public class LoginPageSteps {
     @Then("^I click on login button$")
     public void clickLoginButton() {
         new LoginPage().clickLogin();
-    }
-
-    @Then("^I am on the Home Page$")
-    public void atTheHomePage() {
-        assert new HomePage().onPage();
     }
 
     @And("^I debug$")

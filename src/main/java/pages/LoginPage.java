@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.WebDriverFactory;
-
 import java.time.Duration;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;

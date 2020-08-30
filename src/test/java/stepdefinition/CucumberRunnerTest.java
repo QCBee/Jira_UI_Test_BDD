@@ -9,7 +9,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "stepdefinition",
         plugin = {"pretty", "json:target/cucumber.json"},
-        tags = ("@Regression"))
+        tags = ("@Regression"),
+        monochrome = false)
 public class CucumberRunnerTest {
 
 }

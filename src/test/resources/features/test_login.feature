@@ -15,10 +15,10 @@ Feature: Login to Jira
     And I enter <userName> and <userPass>
     And I click on login button
     Then I stay at Login Page
-    Examples:
+      Examples:
       | userName | userPass |
       | webinar5 | test     |
-      |test      |webinar5  |
-      |          |webinar5  |
-      |webinar5  |          |
+      | test     | webinar5 |
+      |          | webinar5 |
+      | webinar5 |          |
       |          |          |
